@@ -171,12 +171,142 @@ def overview():
                   "Five blueprints share one rule: run offline, test first, gate every change.")
 
 
+# Case-study diagrams. These draw documented live deployments. No case-study code ships here.
+# zone: (x, y, w, h, label, ramp_index)
+# card: (id, x, y, w, h, kicker, title_lines, subtitle, accent)
+# label: (x, y, text)
+
+
+def arrow(pts: list, colour: str) -> list[str]:
+    d = "M" + " L".join(f"{x} {y}" for x, y in pts)
+    x, y = pts[-1]
+    px, py = pts[-2]
+    if x > px:
+        tri = f"{x} {y} {x-9} {y-5} {x-9} {y+5}"
+    elif x < px:
+        tri = f"{x} {y} {x+9} {y-5} {x+9} {y+5}"
+    elif y > py:
+        tri = f"{x} {y} {x-5} {y-9} {x+5} {y-9}"
+    else:
+        tri = f"{x} {y} {x-5} {y+9} {x+5} {y+9}"
+    return [f'<path d="{d}" class="e" stroke="{colour}"/>', f'<polygon points="{tri}" fill="{colour}"/>']
+
+
+def render_case(title: str, w: int, h: int, zones: list, cards: list, edges: list,
+                labels: list, caption: str) -> str:
+    out = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-labelledby="t d">',
+        f"<title id=\"t\">{esc(title)}</title><desc id=\"d\">{esc(caption)}</desc>",
+        "<style>",
+        f"text{{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:{TEXT}}}",
+        ".h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:" + MUTED + "}",
+        ".k{font-size:11px;font-weight:700;letter-spacing:1px}.z{font-size:13px;font-weight:600}",
+        ".e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}",
+        "@keyframes flow{to{stroke-dashoffset:-32}}",
+        ".p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}",
+        "@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}",
+        "</style>",
+        f'<rect width="{w}" height="{h}" fill="{NIGHT}"/>',
+        f'<text x="30" y="42" class="h">{esc(title)}</text>',
+        f'<text x="30" y="64" class="s">{esc(caption)}</text>',
+    ]
+    for x, y, zw, zh, label, ri in zones:
+        out.append(f'<rect x="{x}" y="{y}" width="{zw}" height="{zh}" rx="12" fill="#0F1422" '
+                   f'stroke="{RAMP[ri % 3]}" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 4"/>')
+        out.append(f'<text x="{x + 14}" y="{y + 22}" class="z" fill="{RAMP[ri % 3]}" style="fill:{RAMP[ri % 3]}">{esc(label)}</text>')
+    for pts, ri in edges:
+        out.extend(arrow(pts, RAMP[ri % 3]))
+    for cid, x, y, cw, ch, kicker, lines, sub, accent in cards:
+        stroke = VIOLET if accent else "#2A3350"
+        cls = ' class="p"' if accent else ""
+        rows = 1 + len(lines) + (1 if sub else 0)
+        top = y + ch / 2 - (rows - 1) * 9 + 4
+        out.append(f'<g id="{cid}"{cls}><rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="10" fill="{PANEL}" stroke="{stroke}" stroke-width="2"/>')
+        cx = x + cw / 2
+        out.append(f'<text x="{cx}" y="{top}" text-anchor="middle" class="k" style="fill:{VIOLET if accent else RAMP[0]}">{esc(kicker)}</text>')
+        for j, line in enumerate(lines):
+            out.append(f'<text x="{cx}" y="{top + 18 * (j + 1)}" text-anchor="middle" class="n">{esc(line)}</text>')
+        if sub:
+            out.append(f'<text x="{cx}" y="{top + 18 * (len(lines) + 1)}" text-anchor="middle" class="s">{esc(sub)}</text>')
+        out.append("</g>")
+    for x, y, text in labels:
+        out.append(f'<text x="{x}" y="{y}" text-anchor="middle" class="s">{esc(text)}</text>')
+    out.append("</svg>")
+    return "\n".join(out) + "\n"
+
+
+def zoom_cta():
+    zones = [
+        (20, 90, 280, 330, "Gmail Department [Steps 1 and 5]", 0),
+        (330, 90, 300, 150, "Zoom Department [Step 2]", 1),
+        (660, 90, 280, 150, "Processing Department [Step 3]", 2),
+        (660, 270, 280, 150, "Boss Approval Office [Step 4]", 2),
+        (20, 450, 920, 130, "Team Recipients [Step 6]", 0),
+    ]
+    cards = [
+        ("s1", 40, 125, 240, 90, "STEP 1", ["Receive transcript"], "Zoom transcript email arrives", False),
+        ("s2", 360, 125, 240, 90, "STEP 2", ["Parse transcript"], "Zoom transcript read in full", False),
+        ("s3", 680, 125, 240, 90, "STEP 3", ["Extract and draft"], "actions, owners, deadlines", False),
+        ("s4", 680, 305, 240, 90, "STEP 4", ["Review and approve"], "the boss signs off the draft", True),
+        ("s5", 40, 305, 240, 90, "STEP 5", ["Send approved email"], "only after sign-off", False),
+        ("s6", 360, 480, 240, 80, "STEP 6", ["Team receives"], "actions and deadlines", False),
+    ]
+    edges = [
+        ([(280, 170), (360, 170)], 0),
+        ([(600, 170), (680, 170)], 1),
+        ([(800, 215), (800, 305)], 2),
+        ([(680, 350), (280, 350)], 2),
+        ([(250, 395), (250, 520), (360, 520)], 0),
+    ]
+    labels = [(470, 338, "approved draft only"), (470, 375, "a person approves every email")]
+    return render_case("Zoom transcript-to-CTA email orchestrator", 960, 600, zones, cards, edges, labels,
+                       "Six steps across five departments. A person approves every email before dispatch.")
+
+
+def crm_invoicing():
+    cards = [
+        ("c1", 30, 120, 200, 110, "STAGE 1", ["Windows Task", "Scheduler"], "weekly unattended trigger", False),
+        ("c2", 270, 120, 200, 110, "STAGE 2", ["Bespoke Task and", "Pricing Matrix Reader"], "task to pricing tier", False),
+        ("c3", 510, 120, 200, 110, "STAGE 3", ["Validation", "Engine"], "checks tier and amount", True),
+        ("c4", 750, 120, 200, 110, "STAGE 4", ["Automated Weekly", "CRM Commit"], "Power Automate", False),
+    ]
+    edges = [
+        ([(230, 175), (270, 175)], 0),
+        ([(470, 175), (510, 175)], 1),
+        ([(710, 175), (750, 175)], 2),
+        ([(850, 230), (850, 270), (130, 270), (130, 230)], 0),
+    ]
+    labels = [(490, 292, "next weekly run")]
+    return render_case("CRM bespoke task and pricing invoicing pipeline", 980, 320, [], cards, edges, labels,
+                       "One unattended scheduled run per week reads tasks, prices them, checks them and commits to the CRM.")
+
+
+def tutor_kb():
+    cards = [
+        ("k1", 30, 120, 200, 110, "STAGE 1", ["Protocol", "Ingestion"], "FAQs and operating protocols", False),
+        ("k2", 270, 120, 200, 110, "STAGE 2", ["Structured", "FAQ KB"], "-30% queries", False),
+        ("k3", 510, 120, 200, 110, "STAGE 3", ["NotebookLM", "Grounded Layer"], "-30% further queries", True),
+        ("k4", 750, 120, 200, 110, "STAGE 4", ["Instant Tutor", "Self-Service"], "answers without waiting", False),
+    ]
+    edges = [
+        ([(230, 175), (270, 175)], 0),
+        ([(470, 175), (510, 175)], 1),
+        ([(710, 175), (750, 175)], 2),
+    ]
+    zones = [(30, 260, 920, 70, "Approximate combined effect", 1)]
+    labels = [(490, 312, "1 - 0.7 x 0.7 = 0.51, so about 51% fewer queries than the baseline")]
+    return render_case("Tutor knowledge base and NotebookLM integration", 980, 350, zones, cards, edges, labels,
+                       "Grounded retrieval over one structured knowledge base. Figures are approximate.")
+
+
 def main():
     out = Path(__file__).resolve().parents[1] / "assets"
     out.mkdir(exist_ok=True)
     files = {"architecture.svg": overview, "multi-repo-orchestrator.svg": orchestrator,
              "ast-delta-gate.svg": delta_gate, "pretooluse-hooks.svg": hooks,
-             "skill-router.svg": router, "secops-office.svg": secops}
+             "skill-router.svg": router, "secops-office.svg": secops,
+             "zoom-cta-orchestrator.svg": zoom_cta, "crm-invoicing-pipeline.svg": crm_invoicing,
+             "tutor-notebooklm-kb.svg": tutor_kb}
     for name, fn in files.items():
         (out / name).write_text(fn(), encoding="utf-8")
         print("wrote", name)
