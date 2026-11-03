@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 350" width="980" height="350" role="img" aria-labelledby="t d">
+<title id="t">Tutor knowledge base and NotebookLM integration</title><desc id="d">Grounded retrieval over one structured knowledge base. Figures are approximate.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.k{font-size:11px;font-weight:700;letter-spacing:1px}.z{font-size:13px;font-weight:600}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="980" height="350" fill="#0B0F19"/>
+<text x="30" y="42" class="h">Tutor knowledge base and NotebookLM integration</text>
+<text x="30" y="64" class="s">Grounded retrieval over one structured knowledge base. Figures are approximate.</text>
+<rect x="30" y="260" width="920" height="70" rx="12" fill="#0F1422" stroke="#F97316" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="44" y="282" class="z" fill="#F97316" style="fill:#F97316">Approximate combined effect</text>
+<path d="M230 175 L270 175" class="e" stroke="#FBBF24"/>
+<polygon points="270 175 261 170 261 180" fill="#FBBF24"/>
+<path d="M470 175 L510 175" class="e" stroke="#F97316"/>
+<polygon points="510 175 501 170 501 180" fill="#F97316"/>
+<path d="M710 175 L750 175" class="e" stroke="#F43F5E"/>
+<polygon points="750 175 741 170 741 180" fill="#F43F5E"/>
+<g id="k1"><rect x="30" y="120" width="200" height="110" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="130.0" y="152.0" text-anchor="middle" class="k" style="fill:#FBBF24">STAGE 1</text>
+<text x="130.0" y="170.0" text-anchor="middle" class="n">Protocol</text>
+<text x="130.0" y="188.0" text-anchor="middle" class="n">Ingestion</text>
+<text x="130.0" y="206.0" text-anchor="middle" class="s">FAQs and operating protocols</text>
+</g>
+<g id="k2"><rect x="270" y="120" width="200" height="110" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="370.0" y="152.0" text-anchor="middle" class="k" style="fill:#FBBF24">STAGE 2</text>
+<text x="370.0" y="170.0" text-anchor="middle" class="n">Structured</text>
+<text x="370.0" y="188.0" text-anchor="middle" class="n">FAQ KB</text>
+<text x="370.0" y="206.0" text-anchor="middle" class="s">-30% queries</text>
+</g>
+<g id="k3" class="p"><rect x="510" y="120" width="200" height="110" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="610.0" y="152.0" text-anchor="middle" class="k" style="fill:#7C3AED">STAGE 3</text>
+<text x="610.0" y="170.0" text-anchor="middle" class="n">NotebookLM</text>
+<text x="610.0" y="188.0" text-anchor="middle" class="n">Grounded Layer</text>
+<text x="610.0" y="206.0" text-anchor="middle" class="s">-30% further queries</text>
+</g>
+<g id="k4"><rect x="750" y="120" width="200" height="110" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="850.0" y="152.0" text-anchor="middle" class="k" style="fill:#FBBF24">STAGE 4</text>
+<text x="850.0" y="170.0" text-anchor="middle" class="n">Instant Tutor</text>
+<text x="850.0" y="188.0" text-anchor="middle" class="n">Self-Service</text>
+<text x="850.0" y="206.0" text-anchor="middle" class="s">answers without waiting</text>
+</g>
+<text x="490" y="312" text-anchor="middle" class="s">1 - 0.7 x 0.7 = 0.51, so about 51% fewer queries than the baseline</text>
+</svg>
