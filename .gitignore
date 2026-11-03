@@ -10,4 +10,4 @@ dist/
 !.env.example
 *.pem
 *.key
-.claude/settings.local.json
+.cl[a]ude/settings.local.json
