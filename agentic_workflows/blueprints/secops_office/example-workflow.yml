@@ -1,0 +1,19 @@
+name: secops-office
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  secops:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Run the office on changed files
+        run: python scripts/run_secops.py --base origin/${{ github.base_ref }}

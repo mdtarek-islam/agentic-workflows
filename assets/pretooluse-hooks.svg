@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" width="960" height="350" role="img" aria-labelledby="t d">
+<title id="t">PreToolUse hook pipeline</title><desc id="d">Four checks run in order. One block stops the tool call.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="960" height="350" fill="#0B0F19"/>
+<text x="30" y="42" class="h">PreToolUse hook pipeline</text>
+<text x="30" y="64" class="s">Four checks run in order. One block stops the tool call.</text>
+<path d="M160 170 L185 170 L185 85 L210 85" class="e" stroke="#FBBF24"/>
+<polygon points="210 85 201 80 201 90" fill="#FBBF24"/>
+<path d="M160 170 L185 170 L185 155 L210 155" class="e" stroke="#FBBF24"/>
+<polygon points="210 155 201 150 201 160" fill="#FBBF24"/>
+<path d="M160 170 L185 170 L185 225 L210 225" class="e" stroke="#FBBF24"/>
+<polygon points="210 225 201 220 201 230" fill="#FBBF24"/>
+<path d="M160 170 L185 170 L185 295 L210 295" class="e" stroke="#FBBF24"/>
+<polygon points="210 295 201 290 201 300" fill="#FBBF24"/>
+<path d="M370 85 L405 85 L405 180 L440 180" class="e" stroke="#F97316"/>
+<polygon points="440 180 431 175 431 185" fill="#F97316"/>
+<path d="M370 155 L440 155" class="e" stroke="#F97316"/>
+<polygon points="440 155 431 150 431 160" fill="#F97316"/>
+<path d="M370 225 L405 225 L405 200 L440 200" class="e" stroke="#F97316"/>
+<polygon points="440 200 431 195 431 205" fill="#F97316"/>
+<path d="M370 295 L415 295 L415 210 L440 210" class="e" stroke="#F97316"/>
+<polygon points="440 210 431 205 431 215" fill="#F97316"/>
+<path d="M560 180 L600 180 L600 125 L640 125" class="e" stroke="#F43F5E"/>
+<polygon points="640 125 631 120 631 130" fill="#F43F5E"/>
+<path d="M560 200 L600 200 L600 255 L640 255" class="e" stroke="#F43F5E"/>
+<polygon points="640 255 631 250 631 260" fill="#F43F5E"/>
+<g id="call"><rect x="30" y="140" width="130" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="95.0" y="168.0" text-anchor="middle" class="n">Tool call</text>
+<text x="95.0" y="186.0" text-anchor="middle" class="s">JSON on stdin</text></g>
+<g id="h1"><rect x="210" y="60" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="290.0" y="83.0" text-anchor="middle" class="n">Secret paths</text>
+<text x="290.0" y="101.0" text-anchor="middle" class="s">exit 2 on match</text></g>
+<g id="h2"><rect x="210" y="130" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="290.0" y="153.0" text-anchor="middle" class="n">Destructive cmds</text>
+<text x="290.0" y="171.0" text-anchor="middle" class="s">archive instead</text></g>
+<g id="h3"><rect x="210" y="200" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="290.0" y="223.0" text-anchor="middle" class="n">Prose guard</text>
+<text x="290.0" y="241.0" text-anchor="middle" class="s">dashes, banned words</text></g>
+<g id="h4"><rect x="210" y="270" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="290.0" y="293.0" text-anchor="middle" class="n">Trailer strip</text>
+<text x="290.0" y="311.0" text-anchor="middle" class="s">no attribution</text></g>
+<g id="v" class="p"><rect x="440" y="160" width="120" height="60" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="500.0" y="188.0" text-anchor="middle" class="n">Verdict</text>
+<text x="500.0" y="206.0" text-anchor="middle" class="s">first block wins</text></g>
+<g id="ok"><rect x="640" y="100" width="130" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="705.0" y="123.0" text-anchor="middle" class="n">Allow</text>
+<text x="705.0" y="141.0" text-anchor="middle" class="s">exit 0</text></g>
+<g id="no"><rect x="640" y="230" width="130" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="705.0" y="253.0" text-anchor="middle" class="n">Block</text>
+<text x="705.0" y="271.0" text-anchor="middle" class="s">exit 2 plus reason</text></g>
+</svg>

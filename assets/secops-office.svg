@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-labelledby="t d">
+<title id="t">SecOps office</title><desc id="d">Triage routes a change to three audits. A reviewer sets the verdict.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="960" height="320" fill="#0B0F19"/>
+<text x="30" y="42" class="h">SecOps office</text>
+<text x="30" y="64" class="s">Triage routes a change to three audits. A reviewer sets the verdict.</text>
+<path d="M150 180 L190 180" class="e" stroke="#FBBF24"/>
+<polygon points="190 180 181 175 181 185" fill="#FBBF24"/>
+<path d="M310 180 L345 180 L345 95 L380 95" class="e" stroke="#F97316"/>
+<polygon points="380 95 371 90 371 100" fill="#F97316"/>
+<path d="M310 180 L380 180" class="e" stroke="#F97316"/>
+<polygon points="380 180 371 175 371 185" fill="#F97316"/>
+<path d="M310 180 L345 180 L345 255 L380 255" class="e" stroke="#F97316"/>
+<polygon points="380 255 371 250 371 260" fill="#F97316"/>
+<path d="M540 95 L580 95 L580 170 L620 170" class="e" stroke="#F43F5E"/>
+<polygon points="620 170 611 165 611 175" fill="#F43F5E"/>
+<path d="M540 175 L620 175" class="e" stroke="#F43F5E"/>
+<polygon points="620 175 611 170 611 180" fill="#F43F5E"/>
+<path d="M540 255 L580 255 L580 190 L620 190" class="e" stroke="#F43F5E"/>
+<polygon points="620 190 611 185 611 195" fill="#F43F5E"/>
+<path d="M750 180 L800 180" class="e" stroke="#FBBF24"/>
+<polygon points="800 180 791 175 791 185" fill="#FBBF24"/>
+<g id="ev"><rect x="30" y="150" width="120" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="90.0" y="178.0" text-anchor="middle" class="n">Event</text>
+<text x="90.0" y="196.0" text-anchor="middle" class="s">changed files</text></g>
+<g id="tri" class="p"><rect x="190" y="150" width="120" height="60" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="250.0" y="178.0" text-anchor="middle" class="n">Triage</text>
+<text x="250.0" y="196.0" text-anchor="middle" class="s">pick audits</text></g>
+<g id="a1"><rect x="380" y="70" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="460.0" y="93.0" text-anchor="middle" class="n">Secret scan</text>
+<text x="460.0" y="111.0" text-anchor="middle" class="s">regex rules</text></g>
+<g id="a2"><rect x="380" y="150" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="460.0" y="173.0" text-anchor="middle" class="n">Dependency audit</text>
+<text x="460.0" y="191.0" text-anchor="middle" class="s">advisory table</text></g>
+<g id="a3"><rect x="380" y="230" width="160" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="460.0" y="253.0" text-anchor="middle" class="n">Licence check</text>
+<text x="460.0" y="271.0" text-anchor="middle" class="s">allowlist</text></g>
+<g id="rev"><rect x="620" y="150" width="130" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="685.0" y="178.0" text-anchor="middle" class="n">Reviewer</text>
+<text x="685.0" y="196.0" text-anchor="middle" class="s">merge findings</text></g>
+<g id="ver"><rect x="800" y="150" width="130" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="865.0" y="178.0" text-anchor="middle" class="n">Verdict</text>
+<text x="865.0" y="196.0" text-anchor="middle" class="s">approve or block</text></g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-labelledby="t d">
+<title id="t">Multi-repo orchestrator</title><desc id="d">Scout, plan, pause for approval, fan out scoped builders, check, sign a receipt.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="960" height="340" fill="#0B0F19"/>
+<text x="30" y="42" class="h">Multi-repo orchestrator</text>
+<text x="30" y="64" class="s">Scout, plan, pause for approval, fan out scoped builders, check, sign a receipt.</text>
+<path d="M150 180 L190 180" class="e" stroke="#FBBF24"/>
+<polygon points="190 180 181 175 181 185" fill="#FBBF24"/>
+<path d="M310 180 L350 180" class="e" stroke="#FBBF24"/>
+<polygon points="350 180 341 175 341 185" fill="#FBBF24"/>
+<path d="M480 180 L510 180 L510 105 L540 105" class="e" stroke="#F97316"/>
+<polygon points="540 105 531 100 531 110" fill="#F97316"/>
+<path d="M510 180 L540 180" class="e" stroke="#F97316"/>
+<polygon points="540 180 531 175 531 185" fill="#F97316"/>
+<path d="M510 180 L510 255 L540 255" class="e" stroke="#F97316"/>
+<polygon points="540 255 531 250 531 260" fill="#F97316"/>
+<path d="M670 105 L700 105 L700 170 L730 170" class="e" stroke="#F43F5E"/>
+<polygon points="730 170 721 165 721 175" fill="#F43F5E"/>
+<path d="M670 180 L730 180" class="e" stroke="#F43F5E"/>
+<polygon points="730 180 721 175 721 185" fill="#F43F5E"/>
+<path d="M670 255 L700 255 L700 190 L730 190" class="e" stroke="#F43F5E"/>
+<polygon points="730 190 721 185 721 195" fill="#F43F5E"/>
+<path d="M830 180 L860 180" class="e" stroke="#FBBF24"/>
+<polygon points="860 180 851 175 851 185" fill="#FBBF24"/>
+<g id="scout"><rect x="30" y="150" width="120" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="90.0" y="178.0" text-anchor="middle" class="n">Scout</text>
+<text x="90.0" y="196.0" text-anchor="middle" class="s">find repos</text></g>
+<g id="plan"><rect x="190" y="150" width="120" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="250.0" y="178.0" text-anchor="middle" class="n">Plan</text>
+<text x="250.0" y="196.0" text-anchor="middle" class="s">scoped tasks</text></g>
+<g id="gate" class="p"><rect x="350" y="150" width="130" height="60" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="415.0" y="178.0" text-anchor="middle" class="n">Approval gate</text>
+<text x="415.0" y="196.0" text-anchor="middle" class="s">interrupt</text></g>
+<g id="b1"><rect x="540" y="80" width="130" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="605.0" y="103.0" text-anchor="middle" class="n">Builder A</text>
+<text x="605.0" y="121.0" text-anchor="middle" class="s">scope A</text></g>
+<g id="b2"><rect x="540" y="155" width="130" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="605.0" y="178.0" text-anchor="middle" class="n">Builder B</text>
+<text x="605.0" y="196.0" text-anchor="middle" class="s">scope B</text></g>
+<g id="b3"><rect x="540" y="230" width="130" height="50" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="605.0" y="253.0" text-anchor="middle" class="n">Builder C</text>
+<text x="605.0" y="271.0" text-anchor="middle" class="s">scope C</text></g>
+<g id="qa"><rect x="730" y="150" width="100" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="780.0" y="178.0" text-anchor="middle" class="n">QA</text>
+<text x="780.0" y="196.0" text-anchor="middle" class="s">scope check</text></g>
+<g id="rc"><rect x="860" y="150" width="80" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="900.0" y="178.0" text-anchor="middle" class="n">Receipt</text>
+<text x="900.0" y="196.0" text-anchor="middle" class="s">sha256</text></g>
+</svg>

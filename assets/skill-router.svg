@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-labelledby="t d">
+<title id="t">Skill router</title><desc id="d">Index metadata first. Read a skill body only after a match.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="960" height="280" fill="#0B0F19"/>
+<text x="30" y="42" class="h">Skill router</text>
+<text x="30" y="64" class="s">Index metadata first. Read a skill body only after a match.</text>
+<path d="M150 170 L200 170" class="e" stroke="#FBBF24"/>
+<polygon points="200 170 191 165 191 175" fill="#FBBF24"/>
+<path d="M350 170 L400 170" class="e" stroke="#FBBF24"/>
+<polygon points="400 170 391 165 391 175" fill="#FBBF24"/>
+<path d="M540 170 L590 170" class="e" stroke="#F97316"/>
+<polygon points="590 170 581 165 581 175" fill="#F97316"/>
+<path d="M710 170 L760 170" class="e" stroke="#F43F5E"/>
+<polygon points="760 170 751 165 751 175" fill="#F43F5E"/>
+<g id="q"><rect x="30" y="140" width="120" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="90.0" y="168.0" text-anchor="middle" class="n">Query</text>
+<text x="90.0" y="186.0" text-anchor="middle" class="s">user request</text></g>
+<g id="idx"><rect x="200" y="140" width="150" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="275.0" y="168.0" text-anchor="middle" class="n">Skill index</text>
+<text x="275.0" y="186.0" text-anchor="middle" class="s">frontmatter only</text></g>
+<g id="sc" class="p"><rect x="400" y="140" width="140" height="60" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="470.0" y="168.0" text-anchor="middle" class="n">Score</text>
+<text x="470.0" y="186.0" text-anchor="middle" class="s">keywords plus tokens</text></g>
+<g id="top"><rect x="590" y="140" width="120" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="650.0" y="168.0" text-anchor="middle" class="n">Top match</text>
+<text x="650.0" y="186.0" text-anchor="middle" class="s">above threshold</text></g>
+<g id="load"><rect x="760" y="140" width="170" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="845.0" y="168.0" text-anchor="middle" class="n">Load body</text>
+<text x="845.0" y="186.0" text-anchor="middle" class="s">on demand, cached</text></g>
+</svg>

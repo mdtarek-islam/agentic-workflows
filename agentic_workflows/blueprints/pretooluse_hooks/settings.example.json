@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Grep|Glob|Bash",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/block-secret-files.sh" }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/archive-destructive.sh" },
+          { "type": "command", "command": "bash .claude/hooks/strip-coauthor.sh" }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/guard-prose.sh" }
+        ]
+      }
+    ]
+  },
+  "_python_alternative": {
+    "matcher": "Read|Grep|Glob|Bash|Write|Edit",
+    "command": "python -m agentic_workflows.blueprints.pretooluse_hooks.pipeline"
+  }
+}

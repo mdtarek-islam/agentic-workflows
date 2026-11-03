@@ -1,0 +1,14 @@
+language: en-GB
+reviews:
+  profile: chill
+  auto_review:
+    enabled: true
+    drafts: false
+  path_filters:
+    - "!docs/*.webp"
+    - "!assets/*.svg"
+  path_instructions:
+    - path: "agentic_workflows/**"
+      instructions: "Check that each blueprint stays offline and deterministic."
+    - path: "tests/**"
+      instructions: "Check that every blueprint behaviour has a test."

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d">
+<title id="t">agentic-workflows architecture</title><desc id="d">Five blueprints share one rule: run offline, test first, gate every change.</desc>
+<style>
+text{font-family:'Inter','Segoe UI',Arial,sans-serif;fill:#E5E7EB}
+.h{font-size:22px;font-weight:700}.n{font-size:15px;font-weight:600}.s{font-size:12px;fill:#9CA3AF}
+.e{fill:none;stroke-width:2.5;stroke-dasharray:8 8;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.p{animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{opacity:.75}}
+@media (prefers-reduced-motion:reduce){.e,.p{animation:none}}
+</style>
+<rect width="960" height="400" fill="#0B0F19"/>
+<text x="30" y="42" class="h">agentic-workflows architecture</text>
+<text x="30" y="64" class="s">Five blueprints share one rule: run offline, test first, gate every change.</text>
+<path d="M240 135 L380 135" class="e" stroke="#FBBF24"/>
+<polygon points="380 135 371 130 371 140" fill="#FBBF24"/>
+<path d="M240 235 L310 235 L310 135 L380 135" class="e" stroke="#F97316"/>
+<polygon points="380 135 371 130 371 140" fill="#F97316"/>
+<path d="M580 135 L650 135 L650 185 L720 185" class="e" stroke="#F43F5E"/>
+<polygon points="720 185 711 180 711 190" fill="#F43F5E"/>
+<path d="M580 235 L650 235 L650 185 L720 185" class="e" stroke="#F43F5E"/>
+<polygon points="720 185 711 180 711 190" fill="#F43F5E"/>
+<path d="M480 270 L480 310" class="e" stroke="#FBBF24"/>
+<polygon points="480 310 475 301 485 301" fill="#FBBF24"/>
+<g id="o" class="p"><rect x="40" y="100" width="200" height="70" rx="10" fill="#141A2A" stroke="#7C3AED" stroke-width="2"/>
+<text x="140.0" y="133.0" text-anchor="middle" class="n">Multi-repo orchestrator</text>
+<text x="140.0" y="151.0" text-anchor="middle" class="s">LangGraph or local runner</text></g>
+<g id="d"><rect x="40" y="200" width="200" height="70" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="140.0" y="233.0" text-anchor="middle" class="n">AST delta gate</text>
+<text x="140.0" y="251.0" text-anchor="middle" class="s">structural hashing</text></g>
+<g id="h"><rect x="380" y="100" width="200" height="70" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="480.0" y="133.0" text-anchor="middle" class="n">PreToolUse hooks</text>
+<text x="480.0" y="151.0" text-anchor="middle" class="s">block, archive, guard</text></g>
+<g id="r"><rect x="380" y="200" width="200" height="70" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="480.0" y="233.0" text-anchor="middle" class="n">Skill router</text>
+<text x="480.0" y="251.0" text-anchor="middle" class="s">progressive disclosure</text></g>
+<g id="s"><rect x="720" y="150" width="200" height="70" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="820.0" y="183.0" text-anchor="middle" class="n">SecOps office</text>
+<text x="820.0" y="201.0" text-anchor="middle" class="s">triage to verdict</text></g>
+<g id="core"><rect x="380" y="310" width="200" height="60" rx="10" fill="#141A2A" stroke="#2A3350" stroke-width="2"/>
+<text x="480.0" y="338.0" text-anchor="middle" class="n">Offline test suite</text>
+<text x="480.0" y="356.0" text-anchor="middle" class="s">fake LLM stubs</text></g>
+</svg>
